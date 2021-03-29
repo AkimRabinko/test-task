@@ -3,7 +3,7 @@ package test.services.impl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
-import test.coverter.UserDtoConverter;
+import test.coverters.UserDtoConverter;
 import test.dto.UserDto;
 import test.models.UserEntity;
 import test.models.UserId;

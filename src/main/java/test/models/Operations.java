@@ -13,7 +13,7 @@ public class Operations {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "account_id",insertable = false, updatable = false)
+    @Column(name = "account_id", insertable = false, updatable = false)
     private int accountId;
     @Column(name = "total_sum")
     private BigDecimal totalSum;
@@ -21,7 +21,7 @@ public class Operations {
     private Operation operation;
 
 
-    @OneToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private AccountEntity accountEntity;
 
@@ -29,7 +29,7 @@ public class Operations {
     public Operations() {
     }
 
-    public Operations(Long id, String firstName, String lastName, int accountId, BigDecimal totalSum, Operation operation) {
+    public Operations(long id, String firstName, String lastName, int accountId, BigDecimal totalSum, Operation operation) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -38,7 +38,7 @@ public class Operations {
         this.operation = operation;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

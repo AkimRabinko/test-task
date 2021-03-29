@@ -1,4 +1,4 @@
-package test.coverter;
+package test.coverters;
 
 import org.springframework.stereotype.Component;
 import test.dto.UserDto;

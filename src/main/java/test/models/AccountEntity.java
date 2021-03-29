@@ -20,14 +20,14 @@ public class AccountEntity {
     @Column(name = "currency")
     private String currency;
 
-    @ManyToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumns({
             @JoinColumn(name = "first_name", referencedColumnName = "first_name"),
             @JoinColumn(name = "last_name", referencedColumnName = "last_name")
     })
     private UserEntity userEntity;
 
-    @OneToOne(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "accountEntity", orphanRemoval = true)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "accountEntity", orphanRemoval = true)
     private Operations operations;
 
     public AccountEntity() {
@@ -41,7 +41,7 @@ public class AccountEntity {
         this.currency = currency;
     }
 
-    public AccountEntity(Long id, String firstName, String lastName, String accountNumber, BigDecimal accountBalance, String currency, Operations operations) {
+    public AccountEntity(long id, String firstName, String lastName, String accountNumber, BigDecimal accountBalance, String currency, Operations operations) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,7 +51,7 @@ public class AccountEntity {
         this.operations = operations;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

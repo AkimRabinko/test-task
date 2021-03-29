@@ -9,7 +9,7 @@ public class UserEntity {
     @EmbeddedId
     private UserId userId;
     private String address;
-    @OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "userEntity", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "userEntity", orphanRemoval = true)
     private Set<AccountEntity> accounts;
 
     public UserEntity() {

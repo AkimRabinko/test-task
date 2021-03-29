@@ -1,10 +1,13 @@
 package test.models;
 
+import lombok.EqualsAndHashCode;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 @Embeddable
+@EqualsAndHashCode
 public class UserId implements Serializable {
     @Column(name="first_name")
     private String firstName;
