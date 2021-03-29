@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import test.coverter.UserDtoConverter;
 import test.dto.UserDto;
 import test.models.UserEntity;
+import test.models.UserId;
 import test.repositories.UserRepository;
 import test.services.AccountService;
 import test.services.UserService;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(isolation = Isolation.SERIALIZABLE)
-    public void deleteUser(UserDto userDto) {
-        userRepository.delete(userDtoConverter.convert(userDto));
+    public void deleteUser(UserId userId) {
+        userRepository.deleteById(userId);
     }
 }

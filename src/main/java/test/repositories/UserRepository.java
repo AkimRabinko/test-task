@@ -3,12 +3,12 @@ package test.repositories;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import test.models.UserEntity;
+import test.models.UserId;
 
-import java.util.List;
 import java.util.Set;
 
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
+public interface UserRepository extends CrudRepository<UserEntity, UserId> {
 
     @Query(value = "SELECT us.*, ac.id AS accounts_id, ac.first_name AS accounts_first_name,  " +
             "ac.last_name AS accounts_last_name, ac.account_number, ac.account_balance, ac.currency, " +
@@ -20,6 +20,4 @@ public interface UserRepository extends CrudRepository<UserEntity, Long> {
             "ORDER BY ac.account_number ASC, ac.currency DESC ",
             nativeQuery = true)
     Set<UserEntity> getUsersList();
-
-
 }

@@ -3,6 +3,7 @@ package test.controllers;
 import org.springframework.web.bind.annotation.*;
 import test.dto.UserDto;
 import test.models.UserEntity;
+import test.models.UserId;
 import test.services.UserService;
 
 import java.util.Set;
@@ -27,7 +28,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    public void deleteUser(@RequestBody UserDto userDto) {
-        userService.deleteUser(userDto);
+    public void deleteUser(@RequestBody UserId userId) {
+        userService.deleteUser(userId);
     }
 }
